@@ -1,0 +1,6 @@
+flask
+sqlalchemy
+flask-sqlalchemy
+asyncio
+aiohttp
+forex-python
