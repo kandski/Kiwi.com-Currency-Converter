@@ -62,10 +62,18 @@
 | THB| ฿|
 |  ZAR| R|
 
-
-## CLI app example
+## How can I run it?
+### CLI app example
+- Parameters which are required:
+    - `--input_currency XXX`
+    - `--amount <float>`
+- Optional parameters:
+    - `--output_currency YYY`
+    - `-h --help`
+    - `-u --update`
 - If output part is empty, please run database update or you have entered unsupported currency
 - Supported currencies you can find in Currency table
+- Currency codes are __case-sensitive__
 ```
 python converter.py --amount 99 --input_currency USD
 ```
@@ -127,9 +135,12 @@ python converter.py --amount 99 --input_currency USD --update
 
 ```
 
-## web API example
+### web API example
+
 - If output part is empty, please run database update or you have entered unsupported currency
 - Supported currencies you can find in Currency table
+- Currency codes are __case-sensitive__
+
 ```
 GET /currency_converter?amount=99&input_currency=EUR&output_currency=JPY HTTP/1.1
 ```
@@ -159,6 +170,11 @@ GET /update HTTP/1.1
 }
 
 ```
+
+### Known disfunctions
+- In CLI all __required__ arguments have to be entered to update database
+
+
 
 [Kiwi.com]: http://www.kiwi.com/
 [fixer.io]: http://fixer.io

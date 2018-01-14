@@ -14,7 +14,14 @@ def API():
         args['amount'] = request.args.get("amount", type=float)
 
         if args['amount'] is None:
-            return jsonify({"error": "amount not entered"})
+            response = jsonify({"error": "amount not entered"})
+            response.status_code = 400
+            return response
+
+        if args['input'] is None:
+            response = jsonify({"error": "input currency not entered"})
+            response.status_code = 400
+            return response
 
         result = c.convert(args['input'], args['output'], args['amount'])
 
