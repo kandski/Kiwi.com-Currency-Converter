@@ -1,7 +1,7 @@
 [Kiwi.com] Currency converter task
 ===
 ## What it is?
-- Python 3.6 based CLI app with web API based on Flask 0.12
+- Python 3.6 based CLI app with web API, based on Flask 0.12
 
 
 ## What it does?
@@ -9,15 +9,15 @@
 
 ## What does it needs?
 - All needed requirements are printed in ```requirements.txt```
-- Web API is based on Flask
-- Acquiring currency rates uses asynchronous requests from aiohttp
-- Acquiring currency symbols uses 3rd party library named forex-python
-- SQLite database is built by sqlalchemy
+- Web API is based on __Flask__
+- Acquiring currency rates uses asynchronous requests from __aiohttp__
+- Acquiring currency symbols uses 3rd party library named __forex-python__
+- SQLite database is built by __sqlalchemy__
 
 ## How can i install requirements
 
 `pip install -r requirements.txt`
-- Python 3.6 with pip-tools is expected to have installed
+- __Python 3.6 with pip-tools__ is expected to be installed
 
 ## Where do currency rates get from?
 - Rates are gathered from open-source web API [fixer.io]
@@ -64,8 +64,8 @@
 
 
 ## CLI app example
-- if output part is empty try update/create database or currency is not supported
-- supported currencies you can find in [Section above](#Which-currencies-are-supported?)
+- If output part is empty, please run database update or you have entered unsupported currency
+- Supported currencies you can find in Currency table
 ```
 python converter.py --amount 99 --input_currency USD
 ```
@@ -128,6 +128,8 @@ python converter.py --amount 99 --input_currency USD --update
 ```
 
 ## web API example
+- If output part is empty, please run database update or you have entered unsupported currency
+- Supported currencies you can find in Currency table
 ```
 GET /currency_converter?amount=99&input_currency=EUR&output_currency=JPY HTTP/1.1
 ```
@@ -158,5 +160,5 @@ GET /update HTTP/1.1
 
 ```
 
-[Kiwi.com]: (www.kiwi.com)
-[fixer.io]: (fixer.io)
+[Kiwi.com]: http://www.kiwi.com/
+[fixer.io]: http://fixer.io
