@@ -171,7 +171,7 @@ GET /update HTTP/1.1
 
 ```
 
-### Known disfunctions
+### Known malfunctions
 - In CLI all __required__ arguments have to be entered to update database
 
 
