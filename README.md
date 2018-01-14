@@ -63,6 +63,8 @@
 |  ZAR| R|
 
 ## How can I run it?
+- On first run please update database
+
 ### CLI app example
 - Parameters which are required:
     - `--input_currency XXX`
@@ -74,8 +76,9 @@
 - If output part is empty, please run database update or you have entered unsupported currency
 - Supported currencies you can find in Currency table
 - Currency codes are __case-sensitive__
+#### Run in shell
 ```
-python converter.py --amount 99 --input_currency USD
+python3 converter.py --amount 99 --input_currency USD
 ```
 ```
 {
@@ -140,7 +143,10 @@ python converter.py --amount 99 --input_currency USD --update
 - If output part is empty, please run database update or you have entered unsupported currency
 - Supported currencies you can find in Currency table
 - Currency codes are __case-sensitive__
-
+#### Run flask API
+```FLASK_APP=run.py flask run```
+#### Check 
+``` localhost:5000/currency_converter?amount<float>&input_currency=XXX&output_currency=YYY```
 ```
 GET /currency_converter?amount=99&input_currency=EUR&output_currency=JPY HTTP/1.1
 ```
