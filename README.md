@@ -1,7 +1,8 @@
 [Kiwi.com](www.kiwi.com) Currency converter task
 ===
 ## What it is?
-- Python based CLI app with web API based on Flask
+- Python 3.6 based CLI app with web API based on Flask 0.12
+
 
 ## What it does?
 - Parses input parameters and returns JSON object with values according to amount and currency
@@ -12,6 +13,11 @@
 - Acquiring currency rates uses asynchronous requests from aiohttp
 - Acquiring currency symbols uses 3rd party library named forex-python
 - SQLite database is built by sqlalchemy
+
+## How can i install requirements
+
+`pip install -r requirements.txt`
+- Python 3.6 with pip-tools is expected to have installed
 
 ## Where do currency rates get from?
 - Rates are gathered from open-source web API [fixer.io](fixer.io)
