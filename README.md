@@ -1,4 +1,4 @@
-[Kiwi.com](www.kiwi.com) Currency converter task
+[Kiwi.com] Currency converter task
 ===
 ## What it is?
 - Python 3.6 based CLI app with web API based on Flask 0.12
@@ -20,7 +20,7 @@
 - Python 3.6 with pip-tools is expected to have installed
 
 ## Where do currency rates get from?
-- Rates are gathered from open-source web API [fixer.io](fixer.io)
+- Rates are gathered from open-source web API [fixer.io]
 - Rates are published by European Central Bank daily
 - Use ```update``` parameter to update currency rates once a day as described in examples
 
@@ -158,3 +158,5 @@ GET /update HTTP/1.1
 
 ```
 
+[Kiwi.com]: (www.kiwi.com)
+[fixer.io]: (fixer.io)
