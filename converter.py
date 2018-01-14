@@ -23,11 +23,8 @@ class Converter():
         self._optional.add_argument('-u', '--update', action='store_true',
                             help='Download and update database with rates')
 
-        try:
-            parsed_args = vars(self._args.parse_args())
-            float(parsed_args['amount'])
-        except SystemExit:
-            sys.exit(1)
+
+        parsed_args = vars(self._args.parse_args())
 
         if parsed_args['update']:
             json = self.db.update_db()
@@ -36,7 +33,8 @@ class Converter():
 
         return parsed_args
 
-    def convert(self, in_curr, out_curr, amount):
+    def convert(self, in_curr_sym, out_curr, amount):
+        in_curr = self.symbol_check(in_curr_sym)
         coefficient = self.db.get_coeficient(in_curr, out_curr)
         calculated = dict()
         for key, value in coefficient.items():
@@ -47,8 +45,11 @@ class Converter():
         result['output'] = calculated
         return result
 
-    def symbol_check(self):
-        pass
+    def symbol_check(self, symbol):
+        for key, val in self.db.symbol.items():
+            if symbol == val:
+                return key
+        return symbol
 
 if __name__ == "__main__":
     c = Converter(StorageAlchemy())

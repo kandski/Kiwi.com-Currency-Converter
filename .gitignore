@@ -98,5 +98,3 @@ ENV/
 
 # Jetbrains IDE configurations
 .idea/
-
-.db
