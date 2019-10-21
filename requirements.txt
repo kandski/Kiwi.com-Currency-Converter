@@ -22,5 +22,5 @@ requests==2.18.4          # via forex-python
 simplejson==3.13.2        # via forex-python
 sqlalchemy==1.2.0
 urllib3==1.22             # via requests
-werkzeug==0.14.1          # via flask
+werkzeug==0.15.3          # via flask
 yarl==0.18.0              # via aiohttp
